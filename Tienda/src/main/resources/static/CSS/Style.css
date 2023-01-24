@@ -1,0 +1,36 @@
+.img{
+    width: 200px;
+    
+}
+
+
+
+
+
+p{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: rgb(79, 30, 135);
+}
+
+body{
+    background-color: rgb(172, 196, 217);
+}
+
+#Aside{
+    background-color: rgb(254, 254, 254);
+}
+
+.Content{
+    background-color: rgb(74, 52, 22);
+}
+
+#header{
+    width: 100%;
+    height: 90px;
+    background-color: blue;
+    color: antiquewhite;
+}
+.enlace{
+    color: red;
+}
+
