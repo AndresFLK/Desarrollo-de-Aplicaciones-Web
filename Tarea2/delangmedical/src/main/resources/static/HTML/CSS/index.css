@@ -90,6 +90,17 @@ body{
     background-color: aliceblue;
 }
 
+.info-cliente-container{
+    padding-top: 100px;
+    text-align: center;
+}
+
+.cliente-enc{
+    color: black;
+    text-decoration: none;
+    font-size: 30;
+}
+
 .table-footer-container{
     margin-top: 80px;
     margin-bottom: 80px;
