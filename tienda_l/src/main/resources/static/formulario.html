@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!-- lang es usado para informar el idioma de la página...  -->
+<html lang="es">
+    <head>
+        <title>TechShop</title>
+        <meta charset="UTF-8"/>
+        <!-- la siguiente étiqueta es usada para informar a los SEO de búsqueda -->
+        <meta name="description" content="TechShop tienda en línea"/>
+        <meta name="keyword" content="html,css,web"/>
+        <link href="css/menu.css" 
+              rel="stylesheet" 
+              type="text/css"/>
+    </head>
+    <body>
+        <header id="header">
+            <nav class="nav">
+                <a href="index.html" class="logo nav-link">TechShop</a>
+                <ul class="nav-menu">
+                    <li class="nav-menu-item"><a class="nav-link nav-menu-link" href="ejemplo4.html" >&LeftTriangleBar;</a></li>
+                    <li class="nav-menu-item"><a class="nav-link nav-menu-link" href="ejemplo2.html">&RightTriangleBar;</a></li>
+                    <li class="nav-menu-item"><a class="nav-link nav-menu-link" href="audios.html">Audios</a></li>
+                    <li class="nav-menu-item"><a class="nav-link nav-menu-link" href="videos.html">Videos</a></li>
+                    <li class="nav-menu-item"><a class="nav-link nav-menu-link" href="iframes.html">Iframes</a></li>
+                    <li class="nav-menu-item"><a class="nav-link nav-menu-link" href="formulario.html">Form</a></li>
+                </ul>
+            </nav>            
+        </header>
+        <hr>
+        <h1>Audios</h1>
+        <aside id="aside">
+            <h2>Últimas noticias...</h2>
+            <p>Los productos de la tecnología x están en descuento...</p>
+        </aside>
+        <div id="contenido">
+            <section>
+                <article>
+                    <header>Form</header>
+                    <form name="info" action="registro.jsp" method="post">
+                        <label>Nombre</label>
+                        <input type="text" 
+                               placeholder="Su nombre..."
+                               name="nombre" 
+                               value="" size="35" />
+                        <br>
+                        <label>Clave</label>
+                        <input type="password" name="clave" value="" size="10" />
+                        <br>                        
+                        <input type="hidden" name="id" value="1" />
+                        <br>
+                        <label>Dirección</label>
+                        <textarea name="direccion" rows="4" cols="30">
+San José, Costa Rica, de la última parada del bus amarillo 400 metros norte y 50 sur, a la par del faro quebrado.
+                        </textarea>
+                        <br>
+                        <label>Nivel escolar</label>
+                        <select name="nivel">
+                            <option>Primaria</option>
+                            <option>Secundaria</option>
+                            <option>Universidad</option>
+                        </select>
+                        <br>
+                        <label>Sus pasatiempos: </label>
+                        Futbol <input type="checkbox" name="futbol" value="futbol" checked="checked" />
+                        Baloncesto <input type="checkbox" name="baloncesto" value="baloncesto" />
+                        Ping Pong <input type="checkbox" name="pingpong" value="pingpong" />
+                        <br>
+                        <input type="submit" value="Enviar" />
+                    </form>
+                   
+                </article>                
+            </section>           
+        </div>
+        <footer id="footer">
+            Desarrollos Técnoclógico 2023 &COPY; <address>+506 56658988</address>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,36 @@
+/* Así se hace un comentario */
+
+* {
+    background-color: whitesmoke;
+}
+
+h1,h2,h3 {
+    color: blue;
+}
+
+p {
+    font-family: sans-serif;
+    color: brown;
+}
+
+#encabezado {
+    background-color: blue;
+    color: red;
+}
+
+.encabezado {
+    background-color: red;
+    color: blue;
+}
+
+article header {
+    background-color: bisque;
+    color: black;
+}
+
+#header {
+    width: 100%;
+    height: 90px;
+    background-color: blue;
+    color: white;
+}
