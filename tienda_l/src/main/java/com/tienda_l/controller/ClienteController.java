@@ -11,44 +11,45 @@ import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 @Service
 @Controller
-@Slf4j
+@RequestMapping("/cliente")
 public class ClienteController {
 
     @Autowired
     private clienteServices clienteService;
 
-    @GetMapping("/")
+    @GetMapping("/listado")
     public String inicio(Model model) {
         var clientes = clienteService.getClientes();
         model.addAttribute("clientes", clientes);
-        return "index";
+        return "/cliente/listado";
     }
 
-    @GetMapping("/cliente/nuevo")
+    @GetMapping("/nuevo")
     public String clienteNuevo(Cliente cliente) {
-        return "modCliente";
+        return "/cliente/modificar";
     }
 
-    @PostMapping("/cliente/guardarCliente")
+    @PostMapping("/guardarCliente")
     public String clienteGuardar(Cliente cliente) {
         clienteService.save(cliente);
-        return "redirect:/";
+        return "redirect:/cliente/listado";
     }
 
-    @GetMapping("/cliente/eliminar/{idCliente}")
+    @GetMapping("/eliminar/{idCliente}")
     public String clienteEliminar(Cliente cliente) {
         clienteService.delete(cliente);
-        return "redirect:/";
+        return "redirect:/cliente/listado";
     }
 
-    @GetMapping("/cliente/modificar/{idCliente}")
+    @GetMapping("/modificar/{idCliente}")
     public String clienteModificar(Model model, Cliente cliente) {
         cliente = clienteService.geCliente(cliente);
         model.addAttribute("cliente", cliente);
-        return "modCliente";
+        return "/cliente/modificar";
     }
 
 }

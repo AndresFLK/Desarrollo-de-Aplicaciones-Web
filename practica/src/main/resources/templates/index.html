@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>[[${mensaje}]]</p>
+    <h2>Info del Cliente</h2>
+    <p>Nombre: [[${cliente.nombre}]]</p>
+    <p>Apellidos: [[${cliente.apellidos}]]</p>
+    <p>Correo: [[${cliente.correo}]]</p>
+    <p>Telefono: [[${cliente.telefono}]]</p>
+
+
+    <h2>Lista de Clientes</h2>
+    <table>
+        <tr>
+            <td><h4>Nombre</h4></td>
+            <td><h4>Apellidos</h4></td>
+            <td><h4>Correo</h4></td>
+            <td><h4>Telefono</h4></td>
+        </tr>
+        <tr th:each="clienteFinal : ${clientesMultp}">
+            <td>[[${clienteFinal.nombre}]]</td>
+            <td>[[${clienteFinal.apellidos}]]</td>
+            <td>[[${clienteFinal.correo}]]</td>
+            <td>[[${clienteFinal.telefono}]]</td>
+        </tr>
+    </table>
+    <hr><hr>
+
+    <h2>Lista de Clientes Base de Datos</h2>
+    <div th:if="${clientesBase != null and !clientesBase.empty}">
+        <table>
+            <tr>
+                <td><h4>Nombre</h4></td>
+                <td><h4>Apellidos</h4></td>
+                <td><h4>Correo</h4></td>
+                <td><h4>Telefono</h4></td>
+            </tr>
+            <tr th:each="clienteBase : ${clientesBase}">
+                <td>[[${clienteBase.nombre}]]</td>
+                <td>[[${clienteBase.apellidos}]]</td>
+                <td>[[${clienteBase.correo}]]</td>
+                <td>[[${clienteBase.telefono}]]</td>
+            </tr>
+        </table>    
+    </div>
+    <div th:if="${clientesBase == null or clientesBase.empty}">
+        <h2>Tabla Vacia</h2>
+    </div>
+    
+
+    <hr><hr><hr>
+
+    <header th:replace="Layout/template :: header"></header>
+    <h2>Lista de Clientes CRUD</h2>
+    <a th:href="@{/cliente/nuevo}">Agregar Cliente</a>
+    <div th:if="${clientesBase != null and !clientesBase.empty}">
+        <table>
+            <tr>
+                <td><h4>Nombre</h4></td>
+                <td><h4>Apellidos</h4></td>
+                <td><h4>Correo</h4></td>
+                <td><h4>Telefono</h4></td>
+                <td><h4>Cambios</h4></td>
+            </tr>
+            <tr th:each="clienteBase : ${clientesBase}">
+                <td>[[${clienteBase.nombre}]]</td>
+                <td>[[${clienteBase.apellidos}]]</td>
+                <td>[[${clienteBase.correo}]]</td>
+                <td>[[${clienteBase.telefono}]]</td>
+                <td><a th:href="@{clienteBase/eliminar/} + ${clienteBase.idCliente}">Eliminar</a></td>
+                <td><a th:href="@{clienteBase/modificar/} + ${clienteBase.idCliente}">Modificar</a></td>
+            </tr>
+            
+        </table>    
+    </div>
+
+
+</body>
+</html>

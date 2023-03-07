@@ -7,7 +7,9 @@
     <body>
         <header th:replace="Layout/template :: header"></header>
         
-        
+        <section th:replace="~{Cliente/fragmentos :: botonesAgregar}"></section>
+        <section th:replace="~{Cliente/fragmentos :: agregarCliente}"></section>
+
         <footer th:replace="Layout/template :: footer"></footer>
     </body>
 </html>

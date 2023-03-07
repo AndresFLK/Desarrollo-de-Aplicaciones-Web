@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes</title>
+</head>
+<body>
+    <a th:href="@{/}">Volver</a>
+    <h2>Datos de Cliente</h2>
+    <hr>
+    <form th:action="@{/cliente/guardar}" method="post" th:object="${cliente}">
+        <input type="hidden" name="idCliente" th:field="*{idCliente}">
+        <label for="">Nombre</label>
+        <input type="text" name="nombre" th:field="*{nombre}"><br>
+        <label for="">Apellidos</label>
+        <input type="text" name="Apellidos" th:field="*{apellidos}"><br>
+        <label for="">Correo</label>
+        <input type="email" name="Correo" th:field="*{correo}"><br>
+        <label for="">Telefono</label>
+        <input type="tel" name="Telefono" th:field="*{Telefono}"><br>
+        <input type="submit" name="Guardar" value="Guardar"><br>
+    </form>
+</body>
+</html>
