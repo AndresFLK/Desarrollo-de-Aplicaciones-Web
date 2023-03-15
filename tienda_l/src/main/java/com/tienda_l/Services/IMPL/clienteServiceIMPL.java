@@ -8,13 +8,18 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.tienda_l.Services.clienteServices;
 import com.tienda_l.dao.ClienteDao;
+import com.tienda_l.dao.CreditoDao;
 import com.tienda_l.domain.Cliente;
+import com.tienda_l.domain.Credito;
 
 @Service
 public class clienteServiceIMPL implements clienteServices {
 
     @Autowired
     private ClienteDao clienteDao;
+
+    @Autowired
+    private CreditoDao creditoDao;
 
     @Override
     @Transactional(readOnly = true)
@@ -31,6 +36,10 @@ public class clienteServiceIMPL implements clienteServices {
     @Override
     @Transactional
     public void save(Cliente cliente) {
+        Credito credito = cliente.getCredito();
+        creditoDao.save(credito);
+        cliente.setCredito(credito);
+
         clienteDao.save(cliente);
     }
 

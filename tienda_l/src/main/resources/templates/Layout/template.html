@@ -1,53 +1,75 @@
 <!DOCTYPE html>
 <html xmlns:th="http://thymeleaf.org">
-    <head th:fragment="head">
-        <title>TechShop</title>
-        <meta charset="UTF-8"/>
-        <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
-        <link rel="stylesheet" th:href="@{/webjars/font-awesome/css/all.css}">
-        <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
-        <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
-        <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
-    </head>
-    <body>
-        <header th:fragment="header" class="header">
-            <nav class="navbar navbar-expand-sm navbar-dark bg-dark p-0">
-                <div class="container">
-                    <a th:href="@{/}" class="navbar-brand">Techshop</a>
-                    <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="collapse">
-                        <ul class="navbar-nav">
-                            <li class="navbar-item px-2">
-                                <a th:href="@{/cliente/listado}" class="nav-menu-link nav-link">Clientes</a>
-                            </li>
-                            <li class="navbar-item px-2">
-                                <a th:href="@{/empleado/listado}" class="nav-menu-link nav-link">Empleados</a>
-                            </li>
-                        </ul>
-                    </div> 
+  <head th:fragment="head">
+    <title>TechShop</title>
+    <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"
+    />
+    <link rel="stylesheet" th:href="@{/webjars/font-awesome/css/all.css}" />
+    <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+    <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+    <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+  </head>
+  <body>
+    <header th:fragment="header" class="header">
+      <nav class="navbar navbar-expand-sm navbar-dark bg-dark p-0">
+        <div class="container">
+          <a th:href="@{/}" class="navbar-brand">Techshop</a>
+          <button
+            class="navbar-toggler"
+            data-toggle="collapse"
+            data-target="#navbarCollapse"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="collapse">
+            <ul class="navbar-nav">
+              <li class="navbar-item px-2">
+                <a th:href="@{/cliente/listado}" class="nav-menu-link nav-link"
+                  >Clientes</a
+                >
+              </li>
+              <li class="navbar-item px-2">
+                <a th:href="@{/empleado/listado}" class="nav-menu-link nav-link"
+                  >Empleados</a
+                >
+              </li>
+              <li class="navbar-item px-2">
+                <a
+                  th:href="@{/categoria/listado}"
+                  class="nav-menu-link nav-link"
+                  >Categoria</a
+                >
+              </li>
+              <li class="navbar-item px-2">
+                <a th:href="@{/articulo/listado}" class="nav-menu-link nav-link"
+                  >Articulos</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
 
-                </div>
-            </nav>
-
-            <section id="main-header" class="py-2 bg-success text-white">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <h1><i class="fas fa-cog"></i>Nuestros Clientes</h1>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </header>
-
-        <footer th:fragment="footer" class="bg-info text-white mt-5 p-2">
-            <div class="container">
-                <div class="col">
-                    <p class="lead text-center">&copy;Derechos Reservados</p>
-                </div>
+      <section id="main-header" class="py-2 bg-success text-white">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <h1><i class="fas fa-cog"></i>Nuestros Clientes</h1>
             </div>
-        </footer>
-    </body>
+          </div>
+        </div>
+      </section>
+    </header>
+
+    <footer th:fragment="footer" class="bg-info text-white mt-5 p-2">
+      <div class="container">
+        <div class="col">
+          <p class="lead text-center">&copy;Derechos Reservados</p>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>

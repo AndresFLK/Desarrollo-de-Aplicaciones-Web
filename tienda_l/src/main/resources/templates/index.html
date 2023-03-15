@@ -1,13 +1,31 @@
 <!DOCTYPE html>
-<html xmlns:th="http://thymeleaf.org"  xmlns="http://w3.org/1999/xhtml">
-    <head th:replace="~{Layout/template::head}">
-        <title>TechShop</title>
-        <meta charset="UTF-8"/>
-    </head>
-    <body>
-        <header th:replace="Layout/template :: header"></header>
-        
-        
-        <footer th:replace="Layout/template :: footer"></footer>
-    </body>
+<html xmlns:th="http://thymeleaf.org" xmlns="http://w3.org/1999/xhtml">
+  <head th:replace="~{Layout/template::head}">
+    <title>TechShop</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <header th:replace="Layout/template :: header"></header>
+
+    <div class="container">
+      <div class="row row-cols-3">
+        <div class="card" th:each="articulo : ${articulos}">
+          <div class="card-body">
+            <h5 class="card-title">[[${articulo.descripcion}]]</h5>
+            <h6 class="card-subtitle mb-2 text-muted text-end">
+              [[${articulo.precio}]]
+            </h6>
+            <a
+              class="card-link"
+              th:href="@{/carrito/comprar/} + ${articulo.idArticulo}"
+              >Comprar</a
+            >
+            <p class="card-text">[[${articulo.detalle}]]</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer th:replace="Layout/template :: footer"></footer>
+  </body>
 </html>
