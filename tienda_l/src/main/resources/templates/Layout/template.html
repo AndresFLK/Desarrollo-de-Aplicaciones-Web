@@ -16,7 +16,7 @@
     <header th:fragment="header" class="header">
       <nav class="navbar navbar-expand-sm navbar-dark bg-dark p-0">
         <div class="container">
-          <a th:href="@{/}" class="navbar-brand">Techshop</a>
+          <a th:href="@{/}" class="navbar-brand">[[#{aplicacion.titulo}]]</a>
           <button
             class="navbar-toggler"
             data-toggle="collapse"
@@ -28,24 +28,24 @@
             <ul class="navbar-nav">
               <li class="navbar-item px-2">
                 <a th:href="@{/cliente/listado}" class="nav-menu-link nav-link"
-                  >Clientes</a
+                  >[[#{plantilla.clientes}]]</a
                 >
               </li>
               <li class="navbar-item px-2">
                 <a th:href="@{/empleado/listado}" class="nav-menu-link nav-link"
-                  >Empleados</a
+                  >[[#{plantilla.empleados}]]</a
                 >
               </li>
               <li class="navbar-item px-2">
                 <a
                   th:href="@{/categoria/listado}"
                   class="nav-menu-link nav-link"
-                  >Categoria</a
+                  >[[#{plantilla.categorias}]]</a
                 >
               </li>
               <li class="navbar-item px-2">
                 <a th:href="@{/articulo/listado}" class="nav-menu-link nav-link"
-                  >Articulos</a
+                  >[[#{plantilla.articulos}]]</a
                 >
               </li>
             </ul>
@@ -57,7 +57,7 @@
         <div class="container">
           <div class="row">
             <div class="col-md-6">
-              <h1><i class="fas fa-cog"></i>Nuestros Clientes</h1>
+              <h1><i class="fas fa-cog"></i>[[#{plantilla.suTienda}]]</h1>
             </div>
           </div>
         </div>
@@ -67,7 +67,11 @@
     <footer th:fragment="footer" class="bg-info text-white mt-5 p-2">
       <div class="container">
         <div class="col">
-          <p class="lead text-center">&copy;Derechos Reservados</p>
+          <p class="lead text-center">
+            [[#{plantilla.derechos}]] | <a th:href="@{/(lang=en)}">EN</a> |
+            <a th:href="@{/(lang=es)}">ES</a>
+            <form method="post" th:action="@{/logout}" style="display: inline;"><a :href="#" onclick="this.parentNode.submit();">LOGOUT</a></form>
+          </p>
         </div>
       </div>
     </footer>
