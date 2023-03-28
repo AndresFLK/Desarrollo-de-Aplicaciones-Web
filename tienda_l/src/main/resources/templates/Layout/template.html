@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html xmlns:th="http://thymeleaf.org">
+<html xmlns:th="http://thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:sec="http://thymeleaf.org/thymeleaf-extras-springsecurity6">
   <head th:fragment="head">
     <title>TechShop</title>
     <meta charset="UTF-8" />
@@ -24,8 +26,8 @@
           >
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="collapse">
-            <ul class="navbar-nav">
+          <div class="collapse navbar-collapse justify-content-between"  id="collapse">
+            <ul class="navbar-nav" sec:authorized="hasRole('ROLE_ADMIN') OR hasRole('ROLE_VENDEDOR')">
               <li class="navbar-item px-2">
                 <a th:href="@{/cliente/listado}" class="nav-menu-link nav-link"
                   >[[#{plantilla.clientes}]]</a
@@ -47,6 +49,31 @@
                 <a th:href="@{/articulo/listado}" class="nav-menu-link nav-link"
                   >[[#{plantilla.articulos}]]</a
                 >
+              </li>
+              <li class="navbar-item px-2" sec:authorized="hasRole('ROLE_ADMIN')">
+                <a th:href="@{/usuario/listado}" class="nav-menu-link nav-link"
+                  >Usuarios</a
+                >
+              </li>
+            </ul>
+            <ul class="navbar-nav" sec:authorized="!isAuthenticated()">
+              <li class="navbar-item px-2">
+                <a th:href="@{/login}" class="nav-menu-link nav-link"
+                  ><i class="fas fa-sign-in"></i></a
+                >
+              </li>
+            </ul>
+            <ul class="navbar-nav" sec:authorized="isAuthenticated()">
+              <li class="navbar-item text-white my-auto">
+                <i class="fas fa-user"></i> <span sec:authentication="name">Aaaa</span>
+              </li>
+              <li class="navbar-item my-auto">
+                <form th:action="@{/logout}" method="post">
+                  <button type="submit" class="btn btn-dark">
+                    <i class="fas fa-sign-out"></i>
+                  </button>
+                </form>
+                  
               </li>
             </ul>
           </div>

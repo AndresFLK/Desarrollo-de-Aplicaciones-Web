@@ -1,12 +1,16 @@
 <!DOCTYPE html>
-<html xmlns:th="http://thymeleaf.org" xmlns="http://w3.org/1999/xhtml">
+<html
+  xmlns:th="http://thymeleaf.org"
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:sec="http://thymeleaf.org/thymeleaf-extras-springsecurity6"
+>
   <head th:replace="~{Layout/template::head}">
     <title>TechShop</title>
     <meta charset="UTF-8" />
   </head>
   <body>
     <section th:fragment="botonesAgregar" class="py-4 mb-4 bg-light">
-      <div class="container">
+      <div class="container" sec:authorized="hasRole('ROLE_ADMIN')">
         <div class="row">
           <div class="col-md-3">
             <button
