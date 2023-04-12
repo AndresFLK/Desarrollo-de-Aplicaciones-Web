@@ -18,8 +18,8 @@ public class Articulo implements Serializable {
 
     private String descripcion;
     private String detalle;
-    private String precio;
-    private String existencias;
+    private int precio;
+    private int existencias;
     private String imagen;
     private boolean activo;
 
@@ -30,7 +30,7 @@ public class Articulo implements Serializable {
     public Articulo() {
     }
 
-    public Articulo(String descripcion, String detalle, String precio, String existencias,
+    public Articulo(String descripcion, String detalle, int precio, int existencias,
             String imagen, boolean activo, Categoria categoria) {
         this.descripcion = descripcion;
         this.detalle = detalle;

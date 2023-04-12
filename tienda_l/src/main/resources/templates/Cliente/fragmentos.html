@@ -93,7 +93,7 @@
                   />
                 </div>
               </div>
-              <div class="modal-footer">
+              <div class="modal-footer" sec:authorize="hasRole('ROLE_ADMIN')">
                 <button class="btn btn-primary" type="submit">
                   [[#{accion.guardar}]]
                 </button>
@@ -130,7 +130,7 @@
                       <td>[[${cliente.nombre}]]</td>
                       <td>[[${cliente.apellidos}]]</td>
                       <td>[[${cliente.credito.limite}]]</td>
-                      <td>
+                      <td sec:authorize="hasRole('ROLE_ADMIN')">
                         <a
                           th:href="@{/cliente/eliminar/}+${cliente.idCliente}"
                           class="btn btn-danger"
